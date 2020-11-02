@@ -16,7 +16,7 @@ public class PostgresConnection {
         if (connection == null) {
             String url = "jdbc:postgresql://localhost/postgres";
             String user = "postgres";
-            String password = "Lik@su9121";
+            String password = "";
 
             try {
                 connection=DriverManager.getConnection(url, user, password);
