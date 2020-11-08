@@ -1,23 +1,12 @@
 package model_entity;
 
-public class Customer extends Person{
+public class Customer extends Employee{
 
-    private int customer_id;
-
-    public Customer(String firstName, String lastName, int customer_id) {
-        super(firstName, lastName);
-        this.customer_id = customer_id;
+    public Customer(int id,String firstName, String lastName) {
+        super(id,firstName, lastName);
     }
 
     public Customer() {
-        super();
-    }
-
-    /**
-     *
-     * @return customer id
-     */
-    public int getCustomer_id() {
-        return customer_id;
+        super(0,null, null);
     }
 }

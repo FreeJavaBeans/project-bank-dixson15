@@ -18,6 +18,9 @@ public abstract class Account {
     private long accountNumber;
     private double accountBalance;
 
+    protected Account() {
+    }
+
     /**
      *
      * @param id
@@ -25,11 +28,17 @@ public abstract class Account {
      * @param accountNumber
      * @param accountBalance
      */
+
+
     protected Account(int id, Customer customer, long accountNumber, double accountBalance) {
         this.id = id;
         this.customer = customer;
         this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
+    }
+
+    public int getId() {
+        return id;
     }
 
     /**

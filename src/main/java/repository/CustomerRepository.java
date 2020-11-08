@@ -28,7 +28,7 @@ public interface CustomerRepository {
      * @param customer
      * @return updated customer id
      */
-    Optional<Customer> updateCustomer(int customer_id, Customer customer);
+    Optional<Customer> updateCustomer(Customer customer);
 
     /**
      *

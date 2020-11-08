@@ -1,24 +1,8 @@
 package model_entity;
 
-public abstract class Person {
+public interface Person {
 
-    private String firstName;
-    private String lastName;
+    String getFirstName();
 
-    protected Person(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    public Person() {
-
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
+    String getLastName();
 }

@@ -24,7 +24,6 @@ public class PostgresConnection {
                 LOGGER.log(Level.SEVERE, null, sqlException);
             }
         }
-
         return connection;
     }
 }

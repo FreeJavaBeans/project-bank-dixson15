@@ -25,7 +25,7 @@ public class CustomerService {
     }
 
     public Optional<Customer> updateCustomer(int customer_id, Customer customer){
-        return customerDAO.updateCustomer(customer_id,customer);
+        return customerDAO.updateCustomer(customer);
     }
 
     public String deleteCustomer(int customer_id){

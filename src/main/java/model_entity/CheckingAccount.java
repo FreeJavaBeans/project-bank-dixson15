@@ -1,7 +1,19 @@
 package model_entity;
 
-class CheckingAccount extends Account{
+public class CheckingAccount extends Account{
+    /**
+     *
+     * @param id
+     * @param customer
+     * @param accountNumber
+     * @param accountBalance
+     */
     public CheckingAccount(int id, Customer customer, long accountNumber, double accountBalance) {
         super(id, customer, accountNumber, accountBalance);
+    }
+
+    public CheckingAccount() {
+        super();
+        //super();
     }
 }

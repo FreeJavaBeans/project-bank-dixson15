@@ -18,38 +18,39 @@ public  class CustomerDAO implements CustomerRepository {
     //private static Statement statement;
     private static PreparedStatement preparedStatement;
 
-
+    /**
+     * @param customer
+     * @return
+     */
     @Override
     public String saveCustomer(Customer customer) {
 
         try{
-            String sql = "insert into customer(first_name, last_name, customer_id)" +
+            String sql = "insert into customer(customer_id,first_name, last_name)" +
                 " VALUES(?,?,?)";
-
             preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            preparedStatement.setString(1,customer.getFirstName());
-            preparedStatement.setString(2,customer.getLastName());
-            preparedStatement.setInt(3,customer.getCustomer_id());
+            preparedStatement.setInt(1,customer.getEmp_id());
+            preparedStatement.setString(2,customer.getFirstName());
+            preparedStatement.setString(3,customer.getLastName());
 
             int row = preparedStatement.executeUpdate();
 
             if(row > 0){
-                connection.commit();
-                connection.close();
+
                 return "Row successfully updated!!!";
             }
             else{
                 connection.rollback();
-                connection.close();
                 return "Failed to update row";
             }
+
         }
         catch (SQLException sqlException){
             sqlException.fillInStackTrace();
             LOGGER.log(Level.SEVERE, null, sqlException);
         }
-        return "Error -- Duplicated id: " + customer.getCustomer_id();
+        return "Error -- Duplicated id: " + customer.getEmp_id();
     }
 
     @Override
@@ -58,23 +59,21 @@ public  class CustomerDAO implements CustomerRepository {
         String sql = "select * from customer where customer_id = ?";
         //prepare a sql statement based on the id
         try {
-            PreparedStatement ps = connection.prepareStatement(sql);
+            preparedStatement = connection.prepareStatement(sql);
 
-            ps.setInt(1, customer_id);
+            preparedStatement.setInt(1, customer_id);
 
             //execute query
-            ResultSet rs = ps.executeQuery();
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-            if (rs.next()) {
-                Customer customer = new Customer(rs.getString("first_name"),
-                        rs.getString("last_name"), rs.getInt("customer_id"));
+            if (resultSet.next()) {
+                Customer customer = new Customer(resultSet.getInt("customer_id"),resultSet.getString("first_name"),
+                        resultSet.getString("last_name"));
 
-                System.out.println("CUSTOMER ID#: " + customer.getCustomer_id() + "\n" + "CUSTOMER FIRSTNAME: "
+                System.out.println("CUSTOMER ID#: " + customer.getEmp_id() + "\n" + "CUSTOMER FIRSTNAME: "
                                                     + customer.getFirstName() + "\n" + "CUSTOMER LAST NAME: "
                                                     + customer.getLastName());
-
                 LOGGER.log(Level.INFO, "Found {0} in database", customer);
-
             }
             else
                 System.out.println("No customer found with ID: " + customer_id);
@@ -87,28 +86,32 @@ public  class CustomerDAO implements CustomerRepository {
     }
 
     @Override
-    public Optional<Customer> updateCustomer(int customer_id, Customer customer) {
+    public Optional<Customer> updateCustomer(Customer customer) {
 
-        String sql = "UPDATE customer "
-                + "SET last_name = ? "
-                + "WHERE customer_id = ?";
+        try {
+            String sql = "UPDATE customer "
+                    + "SET first_name = ?, "
+                    + "last_name = ? "
+                    + "WHERE customer_id = ?";
 
-        int rows = 0;
+             preparedStatement = connection.prepareStatement(sql);
 
-        try (
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, customer.getFirstName());
+            preparedStatement.setString(2, customer.getLastName());
+            preparedStatement.setInt(3, customer.getEmp_id());
 
-            preparedStatement.setString(1, customer.getLastName());
-            preparedStatement.setInt(2, customer.getCustomer_id());
+            int updatedRows = preparedStatement.executeUpdate();
 
-            rows = preparedStatement.executeUpdate();
-            connection.close();
+            if(updatedRows > 0)
+                System.out.println("Account successfully update with ID#: " + customer.getEmp_id());
+            else
+                System.out.println("Unable to update account!");
 
         } catch (SQLException sqlException) {
             System.out.println(sqlException.getMessage());
             LOGGER.log(Level.SEVERE, null, sqlException);
         }
-        return  null;
+        return null;
     }
 
     @Override

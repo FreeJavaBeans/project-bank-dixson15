@@ -1,8 +1,10 @@
 package test_code;
 
-import DAO.CustomerDAO;
+import DAO.AccountService;
 import controller.CustomerController;
+import model_entity.Account;
 import model_entity.Customer;
+import model_entity.SavingAccount;
 
 public class DMain {
 
@@ -71,19 +73,34 @@ public class DMain {
 //        }catch (SQLException e){
 //            e.getErrorCode(); }
 
-        Customer customer = new Customer("Jacy","Dubroula2",19);
-       // Customer customer = new Customer();
+
+
+       // try{
+            Customer customer = new Customer(900,"Musenzi","Nkukuta");
+            // Customer customer = new Customer();
 
 //
-        CustomerDAO customerDAO = new CustomerDAO();
+//        CustomerDAO customerDAO = new CustomerDAO();
 //        System.out.println(customerDAO.saveCustomer(customer));
-        //customerDAO.getCustomer(28);
-        //customerDAO.updateCustomer(9, customer);
+            //customerDAO.getCustomer(28);
+            //customerDAO.updateCustomer(9, customer);
 
+            CustomerController customerController = new CustomerController();
+            //System.out.println(customerController.saveCustomer(customer));
+            //System.out.println(customerController.deleteCustomer(19));
 
-        CustomerController customerController = new CustomerController();
-        //System.out.println(customerController.saveCustomer(customer));
-       System.out.println(customerController.deleteCustomer(19));
+           // System.out.println(customerController.saveCustomer(customer));
+//            Account account = new CheckingAccount(825,customer,352377623,500);
+            Account account2 = new SavingAccount(17,customer,2003523776,1500000);
+
+            AccountService accountDAO = new AccountService();
+            //customerController.updateCustomer(900, customer);
+//            System.out.println(accountDAO.saveAccount(account2));
+//            System.out.println(accountDAO.getAccounts(825));
+//            accountDAO.updateAccount(account2);
+            //accountDAO.deleteAccount(account2);
+            //accountDAO.updateBalance(account2);
+            accountDAO.getAccounts();
 
 
 
