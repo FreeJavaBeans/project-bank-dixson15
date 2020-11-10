@@ -12,11 +12,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class AccountService implements AccountRepository {
+public class AccountDAO implements AccountRepository {
 
-    private static CustomerDAO customerDAO;
     private static final Connection connection = PostgresConnection.getConnection();
-    private static final Logger LOGGER = Logger.getLogger(AccountService.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(AccountDAO.class.getName());
     private static PreparedStatement preparedStatement;
 
     @Override

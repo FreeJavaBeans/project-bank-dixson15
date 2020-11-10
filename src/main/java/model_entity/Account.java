@@ -7,8 +7,8 @@ public abstract class Account {
     /**
      * static fields
      */
-    protected static final double INTEREST_RATE = .03;
-    protected static double transaction_fee = 0.2;
+//    protected static final double INTEREST_RATE = .03;
+//    protected static double transaction_fee = 0.2;
 
     /**
      * Instances fields
@@ -35,6 +35,10 @@ public abstract class Account {
         this.customer = customer;
         this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
+    }
+
+    public Account(int customer_id) {
+       this.id = customer_id;
     }
 
     public int getId() {
@@ -70,52 +74,52 @@ public abstract class Account {
      * @param amount
      * @return true or false
      */
-    public boolean withdraw(double amount){
-        try{
-            if((amount + this.transaction_fee) > 0 && (amount + this.transaction_fee) < this.accountBalance){
-                this.accountBalance = this.accountBalance - (amount + this.transaction_fee);
-                return true;
-            }
-        }catch (Exception exception){
-            exception.printStackTrace();
-        }
-        throw new ArithmeticException("Insufficient found");
-
-    }
-    /**
-     *
-     * @param amount
-     * @return true or false
-     */
-    public boolean deposit(double amount){
-        try{
-            if(amount > 0){
-                this.accountBalance += amount;
-                return true;
-            }
-        }catch (Exception exception){
-            exception.printStackTrace();
-        }
-        throw new ArithmeticException("Insufficient found");
-    }
-
-    public double addAccountInterest(){
-
-        this.accountBalance += (this.accountBalance * this.INTEREST_RATE);
-        return accountBalance;
-    }
-    /**
-     *
-     * @param accountDestination
-     * @param amount
-     */
-    public void transferMoneyTo(Account accountDestination, double amount){
-        accountDestination.deposit(amount);
-        this.withdraw(amount);
-    }
-    public String toString(){
-        super.toString();
-        return null;
-    }
+//    public boolean withdraw(double amount){
+//        try{
+//            if((amount + this.transaction_fee) > 0 && (amount + this.transaction_fee) < this.accountBalance){
+//                this.accountBalance = this.accountBalance - (amount + this.transaction_fee);
+//                return true;
+//            }
+//        }catch (Exception exception){
+//            exception.printStackTrace();
+//        }
+//        throw new ArithmeticException("Insufficient found");
+//
+//    }
+//    /**
+//     *
+//     * @param amount
+//     * @return true or false
+//     */
+//    public boolean deposit(double amount){
+//        try{
+//            if(amount > 0){
+//                this.accountBalance += amount;
+//                return true;
+//            }
+//        }catch (Exception exception){
+//            exception.printStackTrace();
+//        }
+//        throw new ArithmeticException("Insufficient found");
+//    }
+//
+//    public double addAccountInterest(){
+//
+//        this.accountBalance += (this.accountBalance * this.INTEREST_RATE);
+//        return accountBalance;
+//    }
+//    /**
+//     *
+//     * @param accountDestination
+//     * @param amount
+//     */
+//    public void transferMoneyTo(Account accountDestination, double amount){
+//        accountDestination.deposit(amount);
+//        this.withdraw(amount);
+//    }
+//    public String toString(){
+//        super.toString();
+//        return null;
+//    }
 
 }

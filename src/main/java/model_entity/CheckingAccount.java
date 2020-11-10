@@ -16,4 +16,8 @@ public class CheckingAccount extends Account{
         super();
         //super();
     }
+
+    public CheckingAccount(int customer_id) {
+        super(customer_id);
+    }
 }

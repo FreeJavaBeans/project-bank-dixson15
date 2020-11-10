@@ -1,13 +1,13 @@
 package controller;
 
-import DAO.AccountService;
+import DAO.AccountDAO;
 import model_entity.Account;
 
 import java.util.List;
 
 public class AccountController {
 
-    private AccountService accountService;
+    private AccountDAO accountService;
 
     public int saveAccount(Account account) {
 

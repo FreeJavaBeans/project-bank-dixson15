@@ -1,12 +1,13 @@
 package service;
 
+import DAO.AccountDAO;
 import model_entity.Account;
 import java.util.List;
 
 
 public class AccountService {
 
-    private DAO.AccountService accountDAO;
+    private AccountDAO accountDAO;
 
     public int saveAccount(Account account) {
 

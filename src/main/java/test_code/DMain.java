@@ -1,14 +1,15 @@
 package test_code;
 
-import DAO.AccountService;
+import DAO.BankTransactionDAO;
 import controller.CustomerController;
-import model_entity.Account;
-import model_entity.Customer;
-import model_entity.SavingAccount;
+import model_entity.*;
 
 public class DMain {
 
     public static void main(String[] args) {
+
+
+
 ////       String url = "jdbc:postgresql://localhost/postgres";
 ////        String user = "postgres";
 ////        String password = "Lik@su9121";
@@ -77,6 +78,7 @@ public class DMain {
 
        // try{
             Customer customer = new Customer(900,"Musenzi","Nkukuta");
+            //Customer customer4 = new Customer(900,"Musenzi","Nkukuta");
             // Customer customer = new Customer();
 
 //
@@ -90,17 +92,42 @@ public class DMain {
             //System.out.println(customerController.deleteCustomer(19));
 
            // System.out.println(customerController.saveCustomer(customer));
-//            Account account = new CheckingAccount(825,customer,352377623,500);
-            Account account2 = new SavingAccount(17,customer,2003523776,1500000);
-
-            AccountService accountDAO = new AccountService();
+            Account account = new CheckingAccount(825,customer,352377623,500);
+            Account account2 = new SavingAccount(17,customer,2003523776,1500);
+           // AccountService accountDAO = new AccountService();
             //customerController.updateCustomer(900, customer);
 //            System.out.println(accountDAO.saveAccount(account2));
 //            System.out.println(accountDAO.getAccounts(825));
 //            accountDAO.updateAccount(account2);
             //accountDAO.deleteAccount(account2);
             //accountDAO.updateBalance(account2);
-            accountDAO.getAccounts();
+            //accountDAO.getAccounts();
+
+
+        BankTransaction bankTransaction = new BankTransaction(account);
+
+        bankTransaction.deposit(account,500);
+//        System.out.println("Transaction ID: " +bankTransaction.getTransactionId() + "\n" + "Account ID: "
+//                + bankTransaction.getAccount().getId());
+//        System.out.println("Transaction ID#: " + bankTransaction.getTransactionId());
+        BankTransactionDAO bankTransactionDAO = new BankTransactionDAO();
+//        bankTransactionDAO.saveDepositTransaction(bankTransaction);
+//        System.out.println("______________________________________________");
+//        System.out.println();
+//
+//        BankTransaction bankTransaction2 = new BankTransaction(account);
+//        bankTransaction2.withdraw(account,200);
+//        bankTransactionDAO.saveWithdrawTransaction(bankTransaction2);
+//        BankTransaction bankTransaction3 = new BankTransaction(account);
+//        bankTransaction3.transferFund(account2,100);
+//
+//        bankTransactionDAO.saveTransferFundTransaction(bankTransaction3);
+
+        bankTransactionDAO.getAllTransaction(1153856065);
+
+//        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//        Date date = new Date();
+//        System.out.println(dateFormat.format(date));
 
 
 
