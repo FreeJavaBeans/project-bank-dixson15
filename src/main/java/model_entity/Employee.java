@@ -1,6 +1,6 @@
 package model_entity;
 
-abstract class Employee implements Person{
+public abstract class Employee implements Person{
 
     private int emp_id;
     private  String firstName;

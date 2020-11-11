@@ -1,11 +1,15 @@
 package test_code;
 
 import DAO.BankTransactionDAO;
+import DAO.BankerDAO;
 import controller.CustomerController;
 import model_entity.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class DMain {
 
+    static Logger logger = LogManager.getLogger(DMain.class);
     public static void main(String[] args) {
 
 
@@ -106,7 +110,7 @@ public class DMain {
 
         BankTransaction bankTransaction = new BankTransaction(account);
 
-        bankTransaction.deposit(account,500);
+        //bankTransaction.deposit(account,500);
 //        System.out.println("Transaction ID: " +bankTransaction.getTransactionId() + "\n" + "Account ID: "
 //                + bankTransaction.getAccount().getId());
 //        System.out.println("Transaction ID#: " + bankTransaction.getTransactionId());
@@ -128,7 +132,15 @@ public class DMain {
 //        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 //        Date date = new Date();
 //        System.out.println(dateFormat.format(date));
+        logger.info("test success");
+        Banker employee = new Banker(2,"Bolowa","Bokul","BANK_TELLER");
+        BankerDAO bankerDAO = new BankerDAO();
+//        System.out.println(bankerDAO.AddEmployee(employee));
+//        System.out.println(employee.getType());
+       // bankerDAO.getAllEmployee();
 
+        bankerDAO.updateEmployee(employee);
+        bankerDAO.getEmployeeByID(2);
 
 
     }

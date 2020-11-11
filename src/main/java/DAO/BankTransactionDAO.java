@@ -1,6 +1,7 @@
 package DAO;
 
 import db_connection.PostgresConnection;
+import jdk.nashorn.internal.runtime.logging.Logger;
 import model_entity.Account;
 import model_entity.BankTransaction;
 import model_entity.CheckingAccount;
@@ -10,14 +11,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class BankTransactionDAO implements BankTransactionRepository {
 
     private static final Connection connection = PostgresConnection.getConnection();
     private static PreparedStatement preparedStatement;
-    private static final Logger LOGGER = Logger.getLogger(BankTransactionDAO.class.getName());
+    //private static final Logger LOGGER = Logger.getLogger(BankTransactionDAO.class.getName());
     private static String sqlQuery;
+
 
     @Override
     public void saveDepositTransaction(BankTransaction bankTransaction) {
@@ -50,7 +51,7 @@ public class BankTransactionDAO implements BankTransactionRepository {
         }
         catch(SQLException sqlException){
             sqlException.fillInStackTrace();
-            LOGGER.log(Level.INFO, null, sqlException);
+            ///LOGGER.log(Level.INFO, null, sqlException);
         }
 //        System.out.println("unable to save transaction");
     }
@@ -85,7 +86,7 @@ public class BankTransactionDAO implements BankTransactionRepository {
         }
         catch(SQLException sqlException){
             sqlException.fillInStackTrace();
-            LOGGER.log(Level.INFO, null, sqlException);
+            //LOGGER.log(Level.INFO, null, sqlException);
         }
 
     }

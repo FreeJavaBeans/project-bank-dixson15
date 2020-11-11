@@ -80,11 +80,10 @@ public class AccountDAO implements AccountRepository {
                 System.out.println("Customer Account ID: : " + ch_id);
                 System.out.println("Customer Acct#: " + acctN);
                 System.out.println("Customer Balance $: " + acctB);
-
+                return accountList;
 
             }
-//                else
-//                    System.out.println("No customer found with ID: " + customer_id);
+
         }catch(SQLException sqlException){
             sqlException.fillInStackTrace();
 
