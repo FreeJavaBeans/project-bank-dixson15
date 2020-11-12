@@ -75,7 +75,7 @@ public class BankSimulator {
                     }
                 }
             } catch (Exception e) {
-                System.out.println("SELF THROWN EXCEPTION IS--->" + e);
+                System.out.println("Error" + e);
             }
         }
 
@@ -157,7 +157,7 @@ public class BankSimulator {
                 System.out.println("Undefined account!!");
                 break;
         }
-        //accountOperationManagerDAO.approveAccount(account);
+        accountOperationManagerDAO.getAccountsforReview();
         System.out.println();
 
     }

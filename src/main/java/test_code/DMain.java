@@ -136,9 +136,9 @@ public class DMain {
 ////        Date date = new Date();
 ////        System.out.println(dateFormat.format(date));
 //        logger.info("test success");
-//        Banker employee = new Banker(2,"Bolowa","Bokul","BANK_TELLER");
+        Banker employee = new Banker(2,"Bolowa","Bokul","BANK_TELLER");
 //        BankerDAO bankerDAO = new BankerDAO();
-////        System.out.println(bankerDAO.AddEmployee(employee));
+//        System.out.println(bankerDAO.addEmployee(employee));
 ////        System.out.println(employee.getType());
 //       // bankerDAO.getAllEmployee();
 //
@@ -152,16 +152,16 @@ public class DMain {
 //        AccountDAO accountDAO = new AccountDAO();
 //        accountDAO.getAccountBalance(account);
 
-//        Account accountB = new SavingAccount(98090000,customer,99999,16800);
-//        Banker employee = new Banker(2,"Bolowa","Bokul","BANK_TELLER");
+        Account accountB = new SavingAccount(9800,customer,99999,16800);
+        //Banker employee = new Banker(2,"Bolowa","Bokul","BANK_TELLER");
 //
         AccountOperationManagerDAO accountOperationManagerDAO = new AccountOperationManagerDAO();
 //
-//        System.out.println(accountOperationManagerDAO.createCustomerAccount(employee,accountB,700));
+        System.out.println(accountOperationManagerDAO.createCustomerAccount(employee,accountB,700));
 //       System.out.println(accountOperationManagerDAO.approveAccount(accountB));
 //       System.out.println(accountOperationManagerDAO.getReviewAccount(accountB));
         AccountDAO accountController = new AccountDAO();
-        //accountController.getAccounts();
+        accountController.getAccounts();
         accountOperationManagerDAO.getAccountsforReview();
 
 
