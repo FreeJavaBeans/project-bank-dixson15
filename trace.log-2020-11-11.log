@@ -1,0 +1,51 @@
+
+
+2020-11-11T02:06:04,262 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:06:04,279 [main] ERROR (BankerDAO.java:47) - Failed to save
+2020-11-11T02:25:11,676 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:26:38,787 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:27:36,129 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:31:30,457 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:31:52,359 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:32:52,916 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:34:54,382 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:35:16,197 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:35:44,332 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:36:00,336 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:36:13,773 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:36:37,841 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:36:58,427 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:37:08,111 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:37:45,574 [main] INFO  (DMain.java:135) - test success
+2020-11-11T02:38:19,654 [main] INFO  (DMain.java:135) - test success
+2020-11-11T03:22:38,753 [main] INFO  (DMain.java:135) - test success
+2020-11-11T03:22:38,766 [main] ERROR (BankerDAO.java:119) - Error occured
+org.postgresql.util.PSQLException: ERROR: syntax error at or near "="
+  Position: 34
+	at DAO.BankerDAO.getEmployeeByID(BankerDAO.java:118) [classes/:?]
+	at test_code.DMain.main(DMain.java:141) [classes/:?]
+2020-11-11T03:24:05,314 [main] INFO  (DMain.java:135) - test success
+2020-11-11T03:24:05,324 [main] ERROR (BankerDAO.java:119) - Error occured
+org.postgresql.util.PSQLException: ERROR: syntax error at or near "="
+  Position: 67
+	at DAO.BankerDAO.getEmployeeByID(BankerDAO.java:118) [classes/:?]
+	at test_code.DMain.main(DMain.java:141) [classes/:?]
+2020-11-11T03:24:46,864 [main] INFO  (DMain.java:135) - test success
+2020-11-11T03:25:36,091 [main] INFO  (DMain.java:135) - test success
+2020-11-11T03:27:44,613 [main] INFO  (DMain.java:135) - test success
+2020-11-11T03:34:18,831 [main] INFO  (DMain.java:135) - test success
+2020-11-11T03:35:15,874 [main] INFO  (DMain.java:135) - test success
+2020-11-11T03:37:23,641 [main] INFO  (DMain.java:135) - test success
+2020-11-11T03:38:07,501 [main] INFO  (DMain.java:135) - test success
+2020-11-11T03:40:13,432 [main] INFO  (DMain.java:135) - test success
+2020-11-11T03:59:38,872 [main] INFO  (DMain.java:135) - test success
+2020-11-11T04:02:28,059 [main] INFO  (DMain.java:135) - test success
+2020-11-11T04:02:28,068 [main] ERROR (BankerDAO.java:146) - Failed to update
+2020-11-11T04:03:45,259 [main] INFO  (DMain.java:135) - test success
+2020-11-11T04:03:45,271 [main] INFO  (BankerDAO.java:143) - Employee with id#2successfully updated
+2020-11-11T04:05:00,584 [main] INFO  (DMain.java:135) - test success
+2020-11-11T04:05:00,594 [main] INFO  (BankerDAO.java:143) - Employee with id# 2successfully updated
+2020-11-11T11:47:46,862 [main] INFO  (DMain.java:136) - test success
+2020-11-11T11:47:46,891 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
+2020-11-11T11:52:33,088 [main] INFO  (DMain.java:136) - test success
+2020-11-11T11:52:33,100 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated

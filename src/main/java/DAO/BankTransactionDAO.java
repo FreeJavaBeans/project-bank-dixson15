@@ -161,7 +161,7 @@ public class BankTransactionDAO implements BankTransactionRepository {
         return null;
     }
 
-    private  java.sql.Date getCurrentDate() {
+    protected  java.sql.Date getCurrentDate() {
         java.util.Date today = new java.util.Date();
         return new java.sql.Date(today.getTime());
     }

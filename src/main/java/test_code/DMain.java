@@ -1,5 +1,7 @@
 package test_code;
 
+import DAO.AccountDAO;
+import DAO.AccountOperationManagerDAO;
 import DAO.BankTransactionDAO;
 import DAO.BankerDAO;
 import controller.CustomerController;
@@ -108,39 +110,55 @@ public class DMain {
             //accountDAO.getAccounts();
 
 
-        BankTransaction bankTransaction = new BankTransaction(account);
-
-        //bankTransaction.deposit(account,500);
-//        System.out.println("Transaction ID: " +bankTransaction.getTransactionId() + "\n" + "Account ID: "
-//                + bankTransaction.getAccount().getId());
-//        System.out.println("Transaction ID#: " + bankTransaction.getTransactionId());
-        BankTransactionDAO bankTransactionDAO = new BankTransactionDAO();
-//        bankTransactionDAO.saveDepositTransaction(bankTransaction);
-//        System.out.println("______________________________________________");
-//        System.out.println();
+//        BankTransaction bankTransaction = new BankTransaction(account);
 //
-//        BankTransaction bankTransaction2 = new BankTransaction(account);
-//        bankTransaction2.withdraw(account,200);
-//        bankTransactionDAO.saveWithdrawTransaction(bankTransaction2);
-//        BankTransaction bankTransaction3 = new BankTransaction(account);
-//        bankTransaction3.transferFund(account2,100);
+//        //bankTransaction.deposit(account,500);
+////        System.out.println("Transaction ID: " +bankTransaction.getTransactionId() + "\n" + "Account ID: "
+////                + bankTransaction.getAccount().getId());
+////        System.out.println("Transaction ID#: " + bankTransaction.getTransactionId());
+//        BankTransactionDAO bankTransactionDAO = new BankTransactionDAO();
+////        bankTransactionDAO.saveDepositTransaction(bankTransaction);
+////        System.out.println("______________________________________________");
+////        System.out.println();
+////
+////        BankTransaction bankTransaction2 = new BankTransaction(account);
+////        bankTransaction2.withdraw(account,200);
+////        bankTransactionDAO.saveWithdrawTransaction(bankTransaction2);
+////        BankTransaction bankTransaction3 = new BankTransaction(account);
+////        bankTransaction3.transferFund(account2,100);
+////
+////        bankTransactionDAO.saveTransferFundTransaction(bankTransaction3);
 //
-//        bankTransactionDAO.saveTransferFundTransaction(bankTransaction3);
+//        bankTransactionDAO.getAllTransaction(1153856065);
+//
+////        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+////        Date date = new Date();
+////        System.out.println(dateFormat.format(date));
+//        logger.info("test success");
+//        Banker employee = new Banker(2,"Bolowa","Bokul","BANK_TELLER");
+//        BankerDAO bankerDAO = new BankerDAO();
+////        System.out.println(bankerDAO.AddEmployee(employee));
+////        System.out.println(employee.getType());
+//       // bankerDAO.getAllEmployee();
+//
+//        bankerDAO.updateEmployee(employee);
+//        bankerDAO.getEmployeeByID(2);
+//
+//        AccountOperationManagerDAO accountOperationManagerDAO = new AccountOperationManagerDAO();
+//        Account account3 = new SavingAccount(1700,customer,2003523776,1800);
+//        //accountOperationManagerDAO.createCustomerAccount(employee,account3 );
+//
+//        AccountDAO accountDAO = new AccountDAO();
+//        accountDAO.getAccountBalance(account);
 
-        bankTransactionDAO.getAllTransaction(1153856065);
-
-//        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//        Date date = new Date();
-//        System.out.println(dateFormat.format(date));
-        logger.info("test success");
+        Account accountB = new SavingAccount(98090000,customer,99999,16800);
         Banker employee = new Banker(2,"Bolowa","Bokul","BANK_TELLER");
-        BankerDAO bankerDAO = new BankerDAO();
-//        System.out.println(bankerDAO.AddEmployee(employee));
-//        System.out.println(employee.getType());
-       // bankerDAO.getAllEmployee();
 
-        bankerDAO.updateEmployee(employee);
-        bankerDAO.getEmployeeByID(2);
+        AccountOperationManagerDAO accountOperationManagerDAO = new AccountOperationManagerDAO();
+
+        System.out.println(accountOperationManagerDAO.createCustomerAccount(employee,accountB,700));
+       System.out.println(accountOperationManagerDAO.approveAccount(accountB));
+       System.out.println(accountOperationManagerDAO.getReviewAccount(accountB));
 
 
     }

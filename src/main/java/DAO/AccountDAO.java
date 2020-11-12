@@ -1,9 +1,8 @@
 package DAO;
 
+import ExceptionHandler.IllegalObjectException;
 import db_connection.PostgresConnection;
-import model_entity.Account;
-import model_entity.CheckingAccount;
-import model_entity.Customer;
+import model_entity.*;
 import repository.AccountRepository;
 
 import java.sql.*;
@@ -128,9 +127,37 @@ public class AccountDAO implements AccountRepository {
     }
 
     @Override
-    public double getAccountBalance(Account account) {
+    public double getAccountBalance(Account account_number) {
 
-        return 0;
+        String sql= null;
+
+        try{
+            if(account_number instanceof SavingAccount)
+
+                sql = "SELECT account_balance FROM saving_account"
+                    + " WHERE account_number = ?";
+            else
+                sql = "SELECT account_balance FROM checking_account"
+                        + " WHERE account_number = ?";
+
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setDouble(1,account_number.getAccountNumber());
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            System.out.println("-------------");
+            System.out.print("|"+"\tBalance |\n");
+            System.out.println("-------------");
+
+            if(resultSet.next()){
+                double balance = resultSet.getDouble("account_balance");
+                System.out.print(" $" + "\t" + balance);
+                System.out.println();
+                return balance;
+            }
+        }catch(SQLException sqlException){
+            sqlException.fillInStackTrace();
+        }
+        throw new IllegalObjectException("Object not supported");
     }
 
     @Override

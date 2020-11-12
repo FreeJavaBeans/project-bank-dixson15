@@ -22,8 +22,8 @@ public class AccountService {
         accountDAO.updateAccount(account);
     }
 
-    public double getAccountBalance(Account account) {
-        return accountDAO.getAccountBalance(account);
+    public double getAccountBalance(Account account_number) {
+        return accountDAO.getAccountBalance(account_number);
     }
 
     public void updateBalance(Account account) {

@@ -22,8 +22,8 @@ public class AccountController {
         accountService.updateAccount(account);
     }
 
-    public double getAccountBalance(Account account) {
-        return accountService.getAccountBalance(account);
+    public double getAccountBalance(Account account_number) {
+        return accountService.getAccountBalance(account_number);
     }
 
     public void updateBalance(Account account) {
