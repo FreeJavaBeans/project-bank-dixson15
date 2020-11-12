@@ -4,6 +4,7 @@ import DAO.AccountDAO;
 import DAO.AccountOperationManagerDAO;
 import DAO.BankTransactionDAO;
 import DAO.BankerDAO;
+import controller.AccountController;
 import controller.CustomerController;
 import model_entity.*;
 import org.apache.logging.log4j.LogManager;
@@ -151,14 +152,17 @@ public class DMain {
 //        AccountDAO accountDAO = new AccountDAO();
 //        accountDAO.getAccountBalance(account);
 
-        Account accountB = new SavingAccount(98090000,customer,99999,16800);
-        Banker employee = new Banker(2,"Bolowa","Bokul","BANK_TELLER");
-
+//        Account accountB = new SavingAccount(98090000,customer,99999,16800);
+//        Banker employee = new Banker(2,"Bolowa","Bokul","BANK_TELLER");
+//
         AccountOperationManagerDAO accountOperationManagerDAO = new AccountOperationManagerDAO();
-
-        System.out.println(accountOperationManagerDAO.createCustomerAccount(employee,accountB,700));
-       System.out.println(accountOperationManagerDAO.approveAccount(accountB));
-       System.out.println(accountOperationManagerDAO.getReviewAccount(accountB));
+//
+//        System.out.println(accountOperationManagerDAO.createCustomerAccount(employee,accountB,700));
+//       System.out.println(accountOperationManagerDAO.approveAccount(accountB));
+//       System.out.println(accountOperationManagerDAO.getReviewAccount(accountB));
+        AccountDAO accountController = new AccountDAO();
+        //accountController.getAccounts();
+        accountOperationManagerDAO.getAccountsforReview();
 
 
     }

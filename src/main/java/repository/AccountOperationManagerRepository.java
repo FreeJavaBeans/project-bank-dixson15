@@ -12,4 +12,5 @@ public interface AccountOperationManagerRepository {
     boolean approveAccount(Account account);
     Account viewCustomerAccount(int account_id);
     List<BankTransaction> viewAllTransactionLog();
+    void getAccountsforReview();
 }

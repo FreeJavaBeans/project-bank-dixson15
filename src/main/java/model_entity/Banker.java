@@ -2,7 +2,7 @@ package model_entity;
 
 public class Banker extends Employee{
 
-    private final static String [] EMP_TYPE  = {"BANK_TELLER", "MANGER"};
+    public final static String [] EMP_TYPE  = {"BANK_TELLER", "MANGER"};
 
     private String type;
 

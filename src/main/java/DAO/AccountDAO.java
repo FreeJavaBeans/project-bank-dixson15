@@ -54,17 +54,21 @@ public class AccountDAO implements AccountRepository {
         List<Account> accountList = new ArrayList<>();
 
         try{
-            String sql = "select   * from checking_account";//" c inner join customer s on  c.customer_id = s.customer_id";
+            String sql = "SELECT * FROM checking_account c join customer s on  c.customer_id = s.customer_id";
             preparedStatement = connection.prepareStatement(sql);
 
                 //execute query
             ResultSet resultSet = preparedStatement.executeQuery();
 
 
+            System.out.println("-------------------------------------------------------------------------------------");
+            System.out.print("|"+"ID#| First name |\tLast Name |\tCustomer ID |\tAccount Number |\tAccount Balance"+ "\t|\n");
+            System.out.println("-------------------------------------------------------------------------------------");
+
             while (resultSet.next()) {
-                int id = resultSet.getInt("s.customer_id");
-                String first = resultSet.getString("s.first_name");
-                String last = resultSet.getString("s.last_name");
+                int id = resultSet.getInt("customer_id");
+                String first = resultSet.getString("first_name");
+                String last = resultSet.getString("last_name");
                 int ch_id = resultSet.getInt("c_id");
                 long acctN = resultSet.getLong("account_number");
                 Double acctB = resultSet.getDouble("account_balance");
@@ -72,19 +76,15 @@ public class AccountDAO implements AccountRepository {
                 Customer customer = new Customer(id,first,last);
                 Account cAccount = new CheckingAccount(ch_id,customer,acctN,acctB);
                 accountList.add(cAccount);
-
-                System.out.println("Customer ID : " + id);
-                System.out.println("Customer First name: " + first);
-                System.out.println("Customer Last name: " + last);
-                System.out.println("Customer Account ID: : " + ch_id);
-                System.out.println("Customer Acct#: " + acctN);
-                System.out.println("Customer Balance $: " + acctB);
-                return accountList;
+                System.out.print(id + "\t\t" + first + "\t\t" + last + "\t\t\t" + ch_id + "\t\t\t" + acctN + "\t\t\t" + "$"+acctB + "\t\t\n");
+                System.out.println("-------------------------------------------------------------------------------------");
+                //return accountList;
 
             }
 
         }catch(SQLException sqlException){
             sqlException.fillInStackTrace();
+            LOGGER.log(Level.SEVERE, null, sqlException);
 
         }
         return accountList;
@@ -156,6 +156,7 @@ public class AccountDAO implements AccountRepository {
             }
         }catch(SQLException sqlException){
             sqlException.fillInStackTrace();
+            LOGGER.log(Level.SEVERE, null, sqlException);
         }
         throw new IllegalObjectException("Object not supported");
     }

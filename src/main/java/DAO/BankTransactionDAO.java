@@ -114,7 +114,6 @@ public class BankTransactionDAO implements BankTransactionRepository {
         catch(SQLException sqlException){
             sqlException.fillInStackTrace();
         }
-
     }
 
     @Override
@@ -127,9 +126,6 @@ public class BankTransactionDAO implements BankTransactionRepository {
 
             sqlQuery = "SELECT * FROM transaction_history";
                   //  + " WHERE transaction_id = ?"; //+ transaction_id;
-            /**
-             *
-             */
             ResultSet resultSet = statement.executeQuery(sqlQuery);
             BankTransaction bankTransaction = new BankTransaction();
 
@@ -137,7 +133,6 @@ public class BankTransactionDAO implements BankTransactionRepository {
                 Account account = new CheckingAccount(resultSet.getInt("customer_id"));
                 bankTransaction.setTransaction_id(resultSet.getInt("transaction_id"));
                 bankTransaction.setAccount(account);
-
 
                 bankTransaction.setTransactionAmount(resultSet.getDouble("transaction_amount"));
 
@@ -161,7 +156,7 @@ public class BankTransactionDAO implements BankTransactionRepository {
         return null;
     }
 
-    protected  java.sql.Date getCurrentDate() {
+    public  java.sql.Date getCurrentDate() {
         java.util.Date today = new java.util.Date();
         return new java.sql.Date(today.getTime());
     }

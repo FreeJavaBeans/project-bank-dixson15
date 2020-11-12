@@ -59,7 +59,7 @@ public class BankTransaction {
         return newBalance;
     }
 
-    private  int generateUniqueId() {
+    public  int generateUniqueId() {
         UUID idOne = UUID.randomUUID();
         String str=""+idOne;
         int uid=str.hashCode();
