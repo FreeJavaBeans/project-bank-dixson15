@@ -31,8 +31,8 @@ class BankTransactionTest {
     @Test
     public void withdrawTest(){
 
-        //assertEquals(450, BankTransaction.withdraw(account,150));
-        assertEquals(4999.8, bankTransaction.withdraw(account2,3000));
+        //asserEquals(450, BankTransaction.withdraw(account,150));
+        assertEquals(5000, bankTransaction.withdraw(account2,3000));
     }
 
     @Test

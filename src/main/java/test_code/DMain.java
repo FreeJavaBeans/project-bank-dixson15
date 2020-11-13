@@ -1,9 +1,6 @@
 package test_code;
 
-import DAO.AccountDAO;
-import DAO.AccountOperationManagerDAO;
-import DAO.BankTransactionDAO;
-import DAO.BankerDAO;
+import DAO.*;
 import controller.AccountController;
 import controller.CustomerController;
 import model_entity.*;
@@ -152,18 +149,24 @@ public class DMain {
 //        AccountDAO accountDAO = new AccountDAO();
 //        accountDAO.getAccountBalance(account);
 
-        Account accountB = new SavingAccount(9800,customer,99999,16800);
-        //Banker employee = new Banker(2,"Bolowa","Bokul","BANK_TELLER");
-//
-        AccountOperationManagerDAO accountOperationManagerDAO = new AccountOperationManagerDAO();
-//
-        System.out.println(accountOperationManagerDAO.createCustomerAccount(employee,accountB,700));
+//        Account accountB = new SavingAccount(9800,customer,99999,16800);
+//        //Banker employee = new Banker(2,"Bolowa","Bokul","BANK_TELLER");
+////
+//        AccountOperationManagerDAO accountOperationManagerDAO = new AccountOperationManagerDAO();
+////
+//        System.out.println(accountOperationManagerDAO.createCustomerAccount(employee,accountB,700));
 //       System.out.println(accountOperationManagerDAO.approveAccount(accountB));
 //       System.out.println(accountOperationManagerDAO.getReviewAccount(accountB));
-        AccountDAO accountController = new AccountDAO();
-        accountController.getAccounts();
-        accountOperationManagerDAO.getAccountsforReview();
+//        AccountDAO accountController = new AccountDAO();
+//        accountController.getAccounts();
+//        accountOperationManagerDAO.getAccountsforReview();
+//        System.out.println();
 
+        BankUser bankUser = new BankUser(customer.getEmp_id(),customer.getFirstName(),customer.getLastName(),"ndombasi","p009hopp9");
+        AuthenticableDAO authenticableDAO = new AuthenticableDAO();
+
+        //authenticableDAO.register(bankUser);
+        authenticableDAO.login("ndombasi","p009hopp999");
 
     }
 }

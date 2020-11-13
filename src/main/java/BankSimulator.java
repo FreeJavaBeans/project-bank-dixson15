@@ -81,6 +81,43 @@ public class BankSimulator {
 
     private static void loginToAccount() {
 
+        System.out.println("TRANSACTION");
+        System.out.println("1. Transfert found\n2. Withdraw\n3. Deposit");
+
+        System.out.println("CUSTOMER ID#:" );
+        int custID = in.nextInt();
+        System.out.println("First name: ");
+        String first = in.next();
+        System.out.println("Last name: ");
+        String last = in.next();
+
+        Customer customer = new Customer(custID,first,last);
+        CustomerController customerController = new CustomerController();
+        customerController.saveCustomer(customer);
+
+
+        System.out.println();
+        System.out.println("ACCOUNT ID#:");
+        int accID = in.nextInt();
+        System.out.println("ACCOUNT NUMBER :" );
+        long accN = in.nextLong();
+        System.out.println("ACCOUNT BALANCE :" );
+        double accB = in.nextDouble();
+
+        System.out.println("ACCOUNT TYPE :1. SAVING \t 2. CHECKING" );
+        int accT = in.nextInt();
+
+        switch (accT){
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            default:
+                System.out.println("Undefined account!!");
+                break;
+        }
 
     }
 

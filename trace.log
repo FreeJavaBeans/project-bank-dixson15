@@ -1,30 +1,26 @@
-2020-11-12T00:15:23,199 [main] INFO  (DMain.java:136) - test success
-2020-11-12T00:15:23,214 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:15:33,410 [main] INFO  (DMain.java:136) - test success
-2020-11-12T00:15:33,421 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:17:43,513 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:17:43,521 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:22:17,132 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:22:17,143 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:23:36,925 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:23:36,951 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:25:01,954 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:25:01,965 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:26:43,613 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:26:43,621 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:27:04,820 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:27:04,829 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:27:17,750 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:27:17,760 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:28:33,621 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:28:33,636 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:35:14,688 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:35:14,697 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:36:34,672 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:36:34,680 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:37:12,557 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:37:12,567 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T00:38:01,030 [main] INFO  (DMain.java:137) - test success
-2020-11-12T00:38:01,037 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
-2020-11-12T02:25:46,232 [main] INFO  (DMain.java:137) - test success
-2020-11-12T02:25:46,243 [main] INFO  (BankerDAO.java:143) - Employee with id# 2 is successfully updated
+2020-11-13T00:04:45,803 [main] ERROR (AuthenticableDAO.java:81) - Failed to register user!
+2020-11-13T00:05:13,421 [main] INFO  (AuthenticableDAO.java:75) - user registration success!
+2020-11-13T00:06:40,674 [main] INFO  (AuthenticableDAO.java:75) - user registration success!
+2020-11-13T00:07:44,263 [main] INFO  (AuthenticableDAO.java:75) - user registration success!
+2020-11-13T00:07:57,282 [main] INFO  (AuthenticableDAO.java:75) - user registration success!
+2020-11-13T00:08:23,207 [main] INFO  (AuthenticableDAO.java:75) - user registration success!
+2020-11-13T00:08:46,315 [main] INFO  (AuthenticableDAO.java:75) - user registration success!
+2020-11-13T00:09:04,391 [main] INFO  (AuthenticableDAO.java:75) - user registration success!
+2020-11-13T00:09:38,031 [main] INFO  (AuthenticableDAO.java:75) - user registration success!
+2020-11-13T00:10:07,147 [main] INFO  (AuthenticableDAO.java:75) - user registration success!
+2020-11-13T00:14:49,168 [main] INFO  (AuthenticableDAO.java:75) - user registration success!
+2020-11-13T00:15:24,852 [main] INFO  (AuthenticableDAO.java:75) - user registration success!
+2020-11-13T00:15:51,436 [main] INFO  (AuthenticableDAO.java:76) - user registration success!
+2020-11-13T00:16:07,046 [main] INFO  (AuthenticableDAO.java:76) - user registration success!
+2020-11-13T00:16:29,431 [main] INFO  (AuthenticableDAO.java:76) - user registration success!
+2020-11-13T00:17:34,420 [main] INFO  (AuthenticableDAO.java:77) - user registration success!
+2020-11-13T00:18:54,233 [main] INFO  (AuthenticableDAO.java:77) - user registration success!
+2020-11-13T00:19:06,134 [main] INFO  (AuthenticableDAO.java:77) - user registration success!
+2020-11-13T00:19:53,258 [main] INFO  (AuthenticableDAO.java:77) - user registration success!
+2020-11-13T00:20:13,224 [main] INFO  (AuthenticableDAO.java:77) - user registration success!
+2020-11-13T00:21:04,146 [main] INFO  (AuthenticableDAO.java:77) - user registration success!
+2020-11-13T00:21:14,541 [main] INFO  (AuthenticableDAO.java:77) - user registration success!
+2020-11-13T00:21:28,306 [main] INFO  (AuthenticableDAO.java:77) - user registration success!
+2020-11-13T00:21:35,740 [main] INFO  (AuthenticableDAO.java:77) - user registration success!
+2020-11-13T00:21:45,480 [main] INFO  (AuthenticableDAO.java:77) - user registration success!
+2020-11-13T00:30:44,416 [main] ERROR (AuthenticableDAO.java:91) - Failed to register user!

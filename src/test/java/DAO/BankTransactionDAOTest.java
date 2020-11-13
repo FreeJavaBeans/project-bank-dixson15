@@ -13,6 +13,7 @@ class BankTransactionDAOTest {
     Customer customer;
     Account account ;
     Account account2;
+    BankTransactionDAO bankTransactionDAO = new BankTransactionDAO();
     @BeforeEach
     void setUp() {
         customer = new Customer();
@@ -32,16 +33,18 @@ class BankTransactionDAOTest {
     @Test
     public void saveDepositTransaction(){
 
+        bankTransactionDAO.saveWithdrawTransaction(bankTransaction);
     }
 
     @Test
     public void saveWithdrawTransactionTest(){
+        bankTransaction.withdraw(account,200);
 
     }
 
     @Test
     public void saveTransferFundTransaction(){
-
+        assertEquals(8100,bankTransaction.transferFund(account2,100));
     }
 
 }

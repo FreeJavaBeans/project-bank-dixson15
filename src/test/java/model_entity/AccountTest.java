@@ -17,7 +17,7 @@ class AccountTest {
 
     @Test
     public void accountCheckTest(){
-        Account account = new CheckingAccount();
+        Account account = new SavingAccount();
         assertTrue(account instanceof CheckingAccount);
     }
     @Test
