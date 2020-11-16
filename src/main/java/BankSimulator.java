@@ -1,7 +1,4 @@
-import DAO.AccountDAO;
 import DAO.AccountOperationManagerDAO;
-import DAO.BankTransactionDAO;
-import controller.AccountController;
 import controller.AccountOperationManagerController;
 import controller.CustomerController;
 import model_entity.*;
@@ -10,7 +7,7 @@ import java.util.Scanner;
 
 public class BankSimulator {
 
-    private static  Scanner in = new Scanner(System.in);
+    private static  Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
 
         displayInfo();
@@ -24,7 +21,7 @@ public class BankSimulator {
             while(true)
             {
                 System.out.println("1.CUSTOMER\t2.BANKER \n3.EXIT");
-                int ch = in.nextInt();
+                int ch = scan.nextInt();
                 switch(ch)
                 {
                     case 1:
@@ -56,7 +53,7 @@ public class BankSimulator {
             try {
                 while (true) {
                     System.out.println("1.APPLY FOR BANK ACCOUNT\n2.LOGIN \n3.EXIT");
-                    int ch = in.nextInt();
+                    int ch = scan.nextInt();
                     switch (ch) {
                         case 1:
                             applyforAccount();
@@ -81,15 +78,15 @@ public class BankSimulator {
 
     private static void loginToAccount() {
 
-        System.out.println("TRANSACTION");
-        System.out.println("1. Transfert found\n2. Withdraw\n3. Deposit");
+        System.out.println("REGISTER");
+        System.out.println("");
 
         System.out.println("CUSTOMER ID#:" );
-        int custID = in.nextInt();
+        int custID = scan.nextInt();
         System.out.println("First name: ");
-        String first = in.next();
+        String first = scan.next();
         System.out.println("Last name: ");
-        String last = in.next();
+        String last = scan.next();
 
         Customer customer = new Customer(custID,first,last);
         CustomerController customerController = new CustomerController();
@@ -98,14 +95,14 @@ public class BankSimulator {
 
         System.out.println();
         System.out.println("ACCOUNT ID#:");
-        int accID = in.nextInt();
+        int accID = scan.nextInt();
         System.out.println("ACCOUNT NUMBER :" );
-        long accN = in.nextLong();
+        long accN = scan.nextLong();
         System.out.println("ACCOUNT BALANCE :" );
-        double accB = in.nextDouble();
+        double accB = scan.nextDouble();
 
         System.out.println("ACCOUNT TYPE :1. SAVING \t 2. CHECKING" );
-        int accT = in.nextInt();
+        int accT = scan.nextInt();
 
         switch (accT){
             case 1:
@@ -120,34 +117,31 @@ public class BankSimulator {
         }
 
     }
-
     private static void applyforAccount() {
-
         Account account = null;
         BankTransaction bankTransaction = new BankTransaction();
 
         System.out.println("CUSTOMER ID#:" );
-        int custID = in.nextInt();
+        int custID = scan.nextInt();
         System.out.println("First name: ");
-        String first = in.next();
+        String first = scan.next();
         System.out.println("Last name: ");
-        String last = in.next();
+        String last = scan.next();
 
         Customer customer = new Customer(custID,first,last);
         CustomerController customerController = new CustomerController();
         customerController.saveCustomer(customer);
 
-
         System.out.println();
         System.out.println("ACCOUNT ID#:");
-        int accID = in.nextInt();
+        int accID = scan.nextInt();
         System.out.println("ACCOUNT NUMBER :" );
-        long accN = in.nextLong();
+        long accN = scan.nextLong();
         System.out.println("ACCOUNT BALANCE :" );
-        double accB = in.nextDouble();
+        double accB = scan.nextDouble();
 
         System.out.println("ACCOUNT TYPE :1. SAVING \t 2. CHECKING" );
-        int accT = in.nextInt();
+        int accT = scan.nextInt();
 
        switch (accT){
            case 1:
@@ -166,13 +160,13 @@ public class BankSimulator {
         AccountOperationManagerController accountOperationManagerController = new AccountOperationManagerController();
         System.out.println("Credit score: ");
 
-        int credit = in.nextInt();
+        int credit = scan.nextInt();
         System.out.println(accountOperationManagerController.createCustomerAccount(banker,account,credit));
         AccountOperationManagerDAO accountOperationManagerDAO = new AccountOperationManagerDAO();
 
 
         System.out.println("R for Review:" );
-        String review = in.next().toUpperCase();
+        String review = scan.next().toUpperCase();
 
         switch (review){
             case "R":
@@ -184,7 +178,7 @@ public class BankSimulator {
         }
 
         System.out.println("A for Review:" );
-        String review2 = in.next().toUpperCase();
+        String review2 = scan.next().toUpperCase();
 
         switch (review2){
             case "A":
@@ -207,7 +201,7 @@ public class BankSimulator {
             while (true) {
                 System.out.println("1.REVIEW ACCOUNT FOR APPROVAL \n2.APPROVE/REJECT \n3.VIEW ALL TRANSACTIONS LOG\n4.VIEW ALL TRANSACTIONS LOG\n5.EXIT. ");
 
-                int ch = in.nextInt();
+                int ch = scan.nextInt();
                 switch (ch) {
                     case 1:
                         rewiewAccount();

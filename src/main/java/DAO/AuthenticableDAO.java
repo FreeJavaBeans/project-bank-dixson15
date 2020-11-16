@@ -19,8 +19,6 @@ public class AuthenticableDAO implements Authenticable {
     private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger(BankUser.class.getName());
     private static PreparedStatement preparedStatement;
 
-
-
     @Override
     public boolean register(BankUser bankUser) {
 
@@ -41,7 +39,6 @@ public class AuthenticableDAO implements Authenticable {
             }
 
         }
-
         catch(SQLException sqlException){
             sqlException.fillInStackTrace();
             logger.error("Failed to register user!");
@@ -51,7 +48,7 @@ public class AuthenticableDAO implements Authenticable {
     }
 
     @Override
-    public String login(String username, String password) {
+    public boolean login(String username, String password) {
         try{
             String sql = " SELECT uid ,firstname, lastname FROM register"
                     + " WHERE username = ? AND password = ?";
@@ -62,13 +59,11 @@ public class AuthenticableDAO implements Authenticable {
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-
-
-
-            System.out.println("------------------------------------------------");
-            System.out.print("| "+"CUSTOMER ID#|\tFirst name |\t Last name "+ "    |\n");
-            System.out.println("------------------------------------------------");
             if(resultSet.next()){
+                System.out.println("------------------------------------------------");
+                System.out.print("| "+"CUSTOMER ID#|\tFirst name |\t Last name "+ "    |\n");
+                System.out.println("------------------------------------------------");
+
                 long id = resultSet.getLong("uid");
                 String first = resultSet.getString("firstname");
                 String last = resultSet.getString("lastname");
@@ -78,20 +73,24 @@ public class AuthenticableDAO implements Authenticable {
                 System.out.println("|                                              |");
                 System.out.println("|----------------------------------------------|");
                 System.out.println();
-                logger.info("user registration success!");
+                logger.info("logged in successfully!");
+                return true;
 
             }
+            else
+                System.out.println("Wrong username or password!");
         }
         catch(SQLException sqlException){
             sqlException.fillInStackTrace();
             logger.error("Failed to register user!");
             LOGGER.log(Level.SEVERE, null, sqlException);
         }
-        return null;
+        return false;
     }
 
     @Override
     public void logout() {
-
+        System.out.println("log out successfully");
+        System.exit(1);
     }
 }

@@ -70,7 +70,7 @@ public class AccountOperationManagerDAO implements AccountOperationManagerReposi
                 + "WHERE account_number = ?";
 
         try {
-            if(!account.equals(null) && getReviewAccount(account) >= 500){
+            if(!account.equals(null) && getReviewAccount(account) >= 500 && account.getAccountBalance() >= 0){
                 preparedStatement = connection.prepareStatement(SQL) ;
 
                 preparedStatement.setString(1, ACCOUNT_STATUS[1]);

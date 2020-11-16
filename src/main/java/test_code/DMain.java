@@ -7,6 +7,8 @@ import model_entity.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Scanner;
+
 public class DMain {
 
     static Logger logger = LogManager.getLogger(DMain.class);
@@ -166,7 +168,23 @@ public class DMain {
         AuthenticableDAO authenticableDAO = new AuthenticableDAO();
 
         //authenticableDAO.register(bankUser);
-        authenticableDAO.login("ndombasi","p009hopp999");
+        authenticableDAO.login("ndombasi","p009hopp9");
+       Scanner in = new Scanner(System.in);
+        while(true){
+            System.out.println("1. LOGOUT\n2. STAY IN");
+            int p = in.nextInt();
+            switch (p){
+                case 1:
+                    authenticableDAO.logout();
+                    break;
+                case 2:
+                    authenticableDAO.login("ndombasi","p009hopp9");
+                    break;
+                default:
+                    System.out.println("Error occur!");
+                    break;
+            }
+        }
 
     }
 }

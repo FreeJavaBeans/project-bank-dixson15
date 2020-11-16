@@ -33,7 +33,8 @@ public abstract class Account {
     protected Account(int id, Customer customer, long accountNumber, double accountBalance) {
         this.id = id;
         this.customer = customer;
-        this.accountNumber = accountNumber;
+        setAccountNumber(accountNumber);
+        //this.accountNumber = accountNumber;
         this.accountBalance = accountBalance;
     }
 
@@ -67,6 +68,13 @@ public abstract class Account {
      */
     public double getAccountBalance() {
         return accountBalance;
+    }
+
+    private void setAccountNumber(long accountNumber) {
+        if(String.valueOf(accountNumber).length() >= 10 && accountNumber > 0)
+            this.accountNumber = accountNumber;
+        else
+            throw new ArithmeticException("Account number is not valid!");
     }
 
     /**

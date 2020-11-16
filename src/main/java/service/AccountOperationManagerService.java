@@ -27,4 +27,8 @@ public class AccountOperationManagerService {
     public List<BankTransaction> viewAllTransactionLog(){
         return accountOperationManagerDAO.viewAllTransactionLog();
     }
+
+    public void getAccountsforReview(){
+        accountOperationManagerDAO.getAccountsforReview();
+    }
 }
